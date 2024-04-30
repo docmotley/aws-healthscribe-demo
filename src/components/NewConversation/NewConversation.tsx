@@ -84,14 +84,14 @@ export default function NewConversation() {
         const loadedMb = Math.round((loaded || 1) / 1024 / 1024);
         const totalMb = Math.round((total || 1) / 1024 / 1024);
         updateProgressBar({
-            id: `New HealthScribe Job: ${jobName}`,
+            id: `New DDxHelper Job: ${jobName}`,
             value: value,
             description: `Uploaded part ${part}, ${loadedMb}MB / ${totalMb}MB`,
         });
     }
 
     /**
-     * @description Submit the form to create a new HealthScribe job
+     * @description Submit the form to create a new DDxHelper job
      */
     async function submitJob(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -155,9 +155,9 @@ export default function NewConversation() {
 
         // Add initial progress flash message
         updateProgressBar({
-            id: `New HealthScribe Job: ${jobName}`,
+            id: `New DDxHelper Job: ${jobName}`,
             value: 0,
-            description: 'Upload to S3 in progress...',
+            description: 'Upload to AWS in progress...',
         });
 
         try {
@@ -169,10 +169,10 @@ export default function NewConversation() {
             });
         } catch (e) {
             updateProgressBar({
-                id: `New HealthScribe Job: ${jobName}`,
+                id: `New DDxHelper Job: ${jobName}`,
                 type: 'error',
                 value: 0,
-                description: 'Uploading files to S3 failed',
+                description: 'Uploading files to AWS failed',
                 additionalInfo: `Error uploading ${filePath!.name}: ${(e as Error).message}`,
             });
             setIsSubmitting(false);
@@ -183,11 +183,11 @@ export default function NewConversation() {
             const startJob = await startMedicalScribeJob(jobParams);
             if (startJob?.MedicalScribeJob?.MedicalScribeJobStatus) {
                 updateProgressBar({
-                    id: `New HealthScribe Job: ${jobName}`,
+                    id: `New DDxHelper Job: ${jobName}`,
                     type: 'success',
                     value: 100,
-                    description: 'HealthScribe job submitted',
-                    additionalInfo: `Audio file successfully uploaded to S3 and submitted to HealthScribe at ${dayjs(
+                    description: 'DDxHelper job submitted',
+                    additionalInfo: `Audio file successfully uploaded to AWS and submitted to DDxHelper at ${dayjs(
                         startJob.MedicalScribeJob.StartTime
                     ).format('MM/DD/YYYY hh:mm A')}. Redirecting to conversation list in 5 seconds.`,
                 });
@@ -195,20 +195,20 @@ export default function NewConversation() {
                 navigate('/conversations');
             } else {
                 updateProgressBar({
-                    id: `New HealthScribe Job: ${jobName}`,
+                    id: `New DDxHelper Job: ${jobName}`,
                     type: 'info',
                     value: 100,
-                    description: 'Unable to confirm HealthScribe job submission',
-                    additionalInfo: `Response from HealthScribe: ${JSON.stringify(startJob)}`,
+                    description: 'Unable to confirm DDxHelper job submission',
+                    additionalInfo: `Response from DDxHelper: ${JSON.stringify(startJob)}`,
                 });
             }
         } catch (e) {
             updateProgressBar({
-                id: `New HealthScribe Job: ${jobName}`,
+                id: `New DDxHelper Job: ${jobName}`,
                 type: 'error',
                 value: 0,
-                description: 'Submitting job to HealthScribe failed',
-                additionalInfo: `Error submitting job to HealthScribe: ${(e as Error).message}`,
+                description: 'Submitting job to DDxHelper failed',
+                additionalInfo: `Error submitting job to DDxHelper: ${(e as Error).message}`,
             });
             setIsSubmitting(false);
             throw e;
@@ -225,7 +225,7 @@ export default function NewConversation() {
         <ContentLayout
             header={
                 <Header
-                    description="Upload your audio file to be processed by AWS HealthScribe"
+                    description="Upload your audio file to be processed by DDxHelper"
                     variant="awsui-h1-sticky"
                 >
                     New Conversation
@@ -236,7 +236,7 @@ export default function NewConversation() {
                 header={
                     <Header
                         variant="h3"
-                        description="Note: AWS HealthScribe offers additional features not built into this demo, such as Custom Vocabulary, Content Removal, and more. This is available via the AWS console, API, or SDK."
+                        description="Note: AWS DDxHelper offers additional features not yet built into this test"
                     />
                 }
             >
@@ -280,7 +280,7 @@ export default function NewConversation() {
                                         >
                                             <Popover
                                                 header="Live Recording"
-                                                content="The audio file will be submitted to AWS HealthScribe after the recording is complete. Please position your device or microphone so it can capture all conversation participants."
+                                                content="The audio file will be submitted to AWS DDxHelper after the recording is complete. Please position your device or microphone so it can capture all conversation participants."
                                             >
                                                 <StatusIndicator type="info">New</StatusIndicator>
                                             </Popover>

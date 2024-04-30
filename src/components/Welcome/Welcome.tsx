@@ -22,16 +22,16 @@ function Welcome() {
         if (isUserAuthenticated) {
             return (
                 <TextContent>
-                    <p>This sample ReactJS-based web app shows the art of the possible in using AWS HealthScribe.</p>
+                    <p>This is an AIMI DDxHelper test Harness.</p>
                     <p>
-                        AWS HealthScribe is a HIPAA-eligible service empowering healthcare software vendors to build
-                        clinical applications that automatically generate clinical notes by analyzing patient-clinician
+                        This environment is meant to preview variuos AWS hosted HIPAA compliant services, and test 
+                        DDxHelper features that will automatically generate clinical notes by analyzing patient-clinician
                         conversations.
                     </p>
-                    <p>Currently this demo allows you to:</p>
+                    <p>Currently this test environment will allow us to:</p>
                     <ul>
                         <li>
-                            <Link onFollow={() => navigate('/conversations')}>View HealthScribe results</Link>,
+                            <Link onFollow={() => navigate('/conversations')}>View DDxHelper results</Link>,
                             including:
                         </li>
                         <ul>
@@ -42,33 +42,24 @@ function Welcome() {
                             <li>Structured medical terms</li>
                         </ul>
                         <li>
-                            Integrate HealthScribe output with{' '}
-                            <Link external href="https://aws.amazon.com/comprehend/medical/">
-                                Amazon Comprehend Medical
-                            </Link>
-                            , allowing you to:
+                            Integrate DDxHelper output with Comprehend Medical services, allowing us to:
                             <ul>
                                 <li>
-                                    Infer medical ontologies (RxNorm, ICD-10-CM, and SNOMED CT) from the HealthScribe
+                                    Infer medical ontologies (RxNorm, ICD-10-CM, and SNOMED CT) from the DDxHelper
                                     trancript
                                 </li>
                                 <li>
-                                    Detect medical terminologies and infer medical ontologies from the HealthScribe
+                                    Detect medical terminologies and infer medical ontologies from the DDxHelper
                                     insights output
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <Link onFollow={() => navigate('/new')}>Submit or record your own audio file</Link> to AWS
-                            HealthScribe.
+                            <Link onFollow={() => navigate('/new')}>Submit or record your own audio file</Link> to
+                            DDxHelper.
                         </li>
                         <li>
-                            <Link onFollow={() => navigate('/generate')}>Generate a multi-speaker audio file</Link>{' '}
-                            using{' '}
-                            <Link external href="https://aws.amazon.com/polly/">
-                                Amazon Polly
-                            </Link>
-                            .
+                            <Link onFollow={() => navigate('/generate')}>Generate a multi-speaker audio file</Link>
                         </li>
                     </ul>
                 </TextContent>
@@ -81,27 +72,13 @@ function Welcome() {
     function Footer() {
         return (
             <Box textAlign="center" color="text-body-secondary" fontSize="body-s">
-                <p>Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.</p>
-                <p>
-                    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
-                    associated documentation files (the &quot;Software&quot;), to deal in the Software without
-                    restriction, including without limitation the rights to use, copy, modify, merge, publish,
-                    distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the
-                    Software is furnished to do so.
-                </p>
-                <p>
-                    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
-                    INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-                    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES
-                    OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-                    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-                </p>
+                <p>Copyright AIMI, Inc. or its affiliates. All Rights Reserved.</p>
             </Box>
         );
     }
 
     return (
-        <ContentLayout header={<Header variant="h2">Demo Application Experience powered by AWS HealthScribe</Header>}>
+        <ContentLayout header={<Header variant="h2">Test Application Experience powered by AWS</Header>}>
             <Container footer={<Footer />}>
                 <Content />
             </Container>

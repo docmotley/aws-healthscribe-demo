@@ -77,26 +77,17 @@ export default function Settings() {
                     >
                         <SpaceBetween size={'m'}>
                             <SettingSelect
-                                formLabel="AWS HealthScribe Region"
-                                formDescription="As of April 13, 2024, AWS HealthScribe is available in the US East (N. Virginia) region."
+                                formLabel="DDxHelper Hosted Region"
+                                formDescription="As of April 30, 2024, DDxHelper is available in the US East (N. Virginia) region."
                                 optionKey={AppSettingKeys.Region}
                                 selectedOption={localSettings['app.region']}
                                 setLocalSettings={setLocalSettings}
                             />
                             <SettingSelect
-                                formLabel="Amazon Comprehend Medical"
+                                formLabel="Medical Comprehension"
                                 formDescription={
                                     <>
-                                        Extend AWS HealthScribe with{' '}
-                                        <Link
-                                            href="https://aws.amazon.com/comprehend/medical/"
-                                            external={true}
-                                            variant="primary"
-                                            fontSize="body-s"
-                                        >
-                                            Amazon Comprehend Medical
-                                        </Link>{' '}
-                                        for ontology linking and medical entity extraction.
+                                        Extend DDxHelper with ontology linking and medical entity extraction.
                                     </>
                                 }
                                 optionKey={AppSettingKeys.ComprehendMedicalEnabled}
