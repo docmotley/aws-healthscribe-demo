@@ -65,23 +65,13 @@ export function ComprehendMedicalNereCost({ clinicalDocumentNereUnits }: Compreh
                             ${(clinicalDocumentNereUnits.eachSegment * 0.01).toFixed(2)}
                         </ValueWithLabel>
                         <p>
-                            This demo uses the Medical Named Entity and Relationship Extraction (NERe) functionality of{' '}
-                            <Link external href="https://aws.amazon.com/comprehend/medical/">
-                                Amazon Comprehend Medical
-                            </Link>{' '}
-                            to extract data one insight at a time.
+                            This Test uses the Medical Named Entity and Relationship Extraction (NERe) functionality of
+                            AWS Comprehend Medical to extract data one insight at a time.
                         </p>
                         <p>
                             The estimated cost for calling the NERe API for each section is{' '}
                             <b>${(clinicalDocumentNereUnits.eachSection * 0.01).toFixed(2)}</b>, and for the entire
                             summary, <b>${(clinicalDocumentNereUnits.allAtOnce * 0.01).toFixed(2)}</b>.
-                        </p>
-                        <p>
-                            Refer to the{' '}
-                            <Link external href="https://aws.amazon.com/comprehend/medical/pricing">
-                                Amazon Comprehend Medical pricing page
-                            </Link>{' '}
-                            to learn more about pricing tiers, including free tier.{' '}
                         </p>
                     </Box>
                 }

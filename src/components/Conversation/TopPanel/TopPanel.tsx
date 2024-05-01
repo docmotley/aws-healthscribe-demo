@@ -228,7 +228,7 @@ export default function TopPanel({
                         >
                             Download
                         </ButtonDropdown>
-                        <Button onClick={() => setShowOutputModal(true)}>View HealthScribe Output</Button>
+                        <Button onClick={() => setShowOutputModal(true)}>View DDxHelper Output</Button>
                         <Button variant="primary" onClick={() => navigate('/conversations')}>
                             Exit Conversation
                         </Button>

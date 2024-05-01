@@ -236,7 +236,7 @@ export default function NewConversation() {
                 header={
                     <Header
                         variant="h3"
-                        description="Note: AWS DDxHelper offers additional features not yet built into this test"
+                        description="Note: DDxHelper offers additional features not yet built into this test"
                     />
                 }
             >
@@ -280,7 +280,7 @@ export default function NewConversation() {
                                         >
                                             <Popover
                                                 header="Live Recording"
-                                                content="The audio file will be submitted to AWS DDxHelper after the recording is complete. Please position your device or microphone so it can capture all conversation participants."
+                                                content="The audio file will be submitted to DDxHelper after the recording is complete. Please position your device or microphone so it can capture all conversation participants."
                                             >
                                                 <StatusIndicator type="info">New</StatusIndicator>
                                             </Popover>

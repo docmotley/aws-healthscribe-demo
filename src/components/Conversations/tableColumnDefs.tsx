@@ -33,7 +33,7 @@ function JobStatus(status: string) {
         case 'FAILED':
             return <StatusIndicator type="error">Failed</StatusIndicator>;
         case 'IN_PROGRESS':
-            return <StatusIndicator type="in-progress">In progress</StatusIndicator>;
+            return <StatusIndicator type="in-progress">Analysis in progress</StatusIndicator>;
         case 'QUEUED':
             return <StatusIndicator type="pending">Queued</StatusIndicator>;
         default:
