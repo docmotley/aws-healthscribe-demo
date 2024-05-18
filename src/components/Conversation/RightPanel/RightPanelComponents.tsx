@@ -87,7 +87,7 @@ export function RightPanelSettings({
             header="Insights Settings"
         >
             <FormField
-                label="Comprehend Medical Confidence Score Threshold"
+                label="Medical Confidence Score Threshold"
                 description="Extracted medical entities with confidence scores lower than this are not shown."
             >
                 <div className={styles.sliderContainer}>

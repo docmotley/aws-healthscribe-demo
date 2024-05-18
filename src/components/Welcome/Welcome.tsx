@@ -1,5 +1,5 @@
-// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-// SPDX-License-Identifier: MIT-0
+// Updated by Ron to utilize internal DDx components and Ensemble Models before deploying to AWS
+// SPDX-License-Identifier: MIT-0 (Original Harness created by AWS for testing)
 import React, { memo } from 'react';
 
 import { useNavigate } from 'react-router-dom';
